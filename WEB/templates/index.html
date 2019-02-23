@@ -9,36 +9,27 @@
       <title>Social Connect</title>
 </head>
 <body>
-      <img src={{url_for('static', filename='assets/fixed_logo.png')}} alt="Social Connect" class="center" width=600px height=300px>
-      <br></br>
-      <br></br>
-      <div class="container">
-        <h1 class="text-center">Social Connect</h1>
-          <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div class="card card-signin my-5">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Sign In</h5>
-                  <form class="form-signin">
-                    <div class="form-label-group">
-                      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                      <label for="inputEmail">Email address</label>
-                    </div>
-
-                    <div class="form-label-group">
-                      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                      <label for="inputPassword">Password</label>
-                    </div>
-
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
-                    <hr class="my-4">
-                    <button class="btn btn-lg btn-light btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign-up</button>
-                  </form>
-                </div>
+    <div class="container">
+      <h1 class="text-center">Login</h1>
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Sign In</h5>
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="http_redirect('http://localhost:5000/login/')" type="submit">Login</button>
+                  <hr class="my-4">
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <script>
+        function http_redirect(url) {
+          // redirects the page to passed url
+          window.location.href = url;
+        }
+      </script>
       <script src={{url_for('static', filename='js/jquery-3.2.1.slim.min.js')}}></script>
       <script src={{url_for('static', filename='js/popper.min.js')}}></script>
       <script src={{url_for('static', filename='js/bootstrap.min.js')}}></script>
