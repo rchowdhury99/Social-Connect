@@ -16,12 +16,24 @@ class Database(object):
                 if item.encode("ascii") != email:
                     password = (item.encode("ascii")).decode("utf-8")
 
-
-        print("DB-Password: %s" % (password))
         return password
+
+    def get_user_info(self, db_name, db_table, email):
+        '''Gets the First Name, Last Name'''
+        connect = sqlite3.connect(db_name)
+        cursor = connect.execute("SELECT Email, FirstName, LastName FROM %s WHERE Email == '%s' " % (db_table, email))
+        info = []
+        for i in cursor:
+            for item in i:
+                if (item.encode("ascii")).decode("utf-8") != email:
+                    info.append((item.encode("ascii")).decode("utf-8"))
+
+        return info
+
 
 
     def get_social_links(self, db_name, db_table, email):
+        '''Gets Social Media Links'''
         connect = sqlite3.connect(db_name)
         cursor = connect.execute("SELECT Email, Facebook, Twitter, Instagram, Snapchat FROM %s WHERE Email == %s" % (db_table, email))
         for i in cursor:

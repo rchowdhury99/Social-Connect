@@ -34,20 +34,16 @@ def check_login_creds():
 
         data = dict(zip(cols, vals))
         password = Database().login_info("db.db", "CLIENTS", data["email"])
-        print("DB-Password: %s" % (password))
-        print("WEB-Password: %s" % (data["password"]))
         # check ther user name and password based on that redirect or just return an error
         if data["password"] == password:
-            return redirect(url_for("get_user_profile"))
+            user_name = Database().get_user_info("db.db", "CLIENTS", data["email"])
+            return render_template("profile.html", fname=user_name[0], lname=user_name[1])
         else:
             return "ERROR"
 
 @app.route("/profile")
 def get_user_profile():
-    # get fname
-    x = "Bob"
-    # get lname
-    return render_template("profile.html", fname=x )
+    return render_template("profile.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
