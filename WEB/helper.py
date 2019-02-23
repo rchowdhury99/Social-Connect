@@ -6,11 +6,17 @@ class Database(object):
     def login_info(self, db_name, db_table, email):
         '''Checks for the password for the requested email'''
         connect = sqlite3.connect(db_name)
-        cursor = connect.cursor()
         # getting the password back
-        x = cursor.execute("SELECT Email, Password FROM %s WHERE EMAIL == '%s'" % (db_table, email))
-        print(x)
-        return x
+        cursor = connect.execute("SELECT Email, Password FROM %s WHERE EMAIL == '%s'" % (db_table, email))
+        # password for the email if exists
+        password = None
+        for i in cursor:
+            for item in i:
+                if item.encode("ascii") != email:
+                    password = item.encode("ascii")
+
+        print("DB-Password: %s" % (password))
+        return password
 
 
     def get(self, db_name, db_table):

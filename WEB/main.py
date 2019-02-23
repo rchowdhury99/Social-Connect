@@ -33,9 +33,14 @@ def check_login_creds():
             cols.append(str(i))
 
         data = dict(zip(cols, vals))
+        password = Database().login_info("db.db", "CLIENTS", data["email"])
+        print("DB-Password: %s" % (password))
+        print("WEB-Password: %s" % (data["password"]))
         # check ther user name and password based on that redirect or just return an error
-
-        return redirect(url_for("get_user_profile"))
+        if data["password"] == password:
+            return redirect(url_for("get_user_profile"))
+        else:
+            return "ERROR"
 
 @app.route("/profile")
 def get_user_profile():
