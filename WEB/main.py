@@ -1,5 +1,4 @@
 import os
-from datetime import datetime
 from flask import *
 from helper import Database
 
@@ -20,7 +19,6 @@ def signUp():
 def signup_client():
     if request.method == "POST":
         response = request.form
-        data = {}
         cols = []
         vals = []
         # getting the email and password
@@ -28,9 +26,8 @@ def signup_client():
             vals.append(str(response[i]))
             cols.append(str(i))
 
-        data = dict(zip(cols, vals))
-        print(data)
-        return "0"
+        Database().add_client("db.db", "CLIENTS", cols, vals)
+        return render_template("login.html")
 
 @app.route("/login")
 @app.route("/login/")
