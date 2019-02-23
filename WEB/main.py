@@ -39,7 +39,7 @@ def check_login_creds():
             user_name = Database().get_user_info("db.db", "CLIENTS", data["email"])
             return render_template("profile.html", fname=user_name[0], lname=user_name[1])
         else:
-            return "ERROR"
+            return render_template("404.html")
 
 @app.route("/profile")
 def get_user_profile():
