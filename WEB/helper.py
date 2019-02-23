@@ -30,8 +30,6 @@ class Database(object):
 
         return info
 
-
-
     def get_social_links(self, db_name, db_table, email):
         '''Gets Social Media Links'''
         connect = sqlite3.connect(db_name)
@@ -43,3 +41,10 @@ class Database(object):
                     social_links.append((item.encode("ascii")).decode("utf-8"))
 
         return social_links
+
+
+    def add_client(self, db_name, db_table, data):
+        connect = sqlite3.connect(db_name)
+        # generate command
+        # cursor = connect.execute("command")
+        return "0" # if saved else return error

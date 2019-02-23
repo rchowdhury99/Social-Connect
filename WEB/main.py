@@ -16,6 +16,21 @@ def main():
 def signUp():
     return render_template("signup.html")
 
+@app.route("/add_data", methods=["POST"])
+def signup_client():
+    if request.method == "POST":
+        response = request.form
+        data = {}
+        cols = []
+        vals = []
+        # getting the email and password
+        for i in response:
+            vals.append(str(response[i]))
+            cols.append(str(i))
+
+        data = dict(zip(cols, vals))
+        print(data)
+        return "0"
 
 @app.route("/login")
 @app.route("/login/")
