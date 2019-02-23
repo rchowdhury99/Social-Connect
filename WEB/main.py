@@ -23,5 +23,9 @@ def check_login_creds():
         print(response)
     return "hi"
 
+@app.route("/profile")
+def get_user_profile():
+    return render_template("profile.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
