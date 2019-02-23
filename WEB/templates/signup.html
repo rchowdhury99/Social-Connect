@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="stylesheet" href={{url_for('static', filename='css/styles.css')}}>
+      <link rel="stylesheet" href={{url_for('static', filename='css/bootstrap.min.css')}}>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Social Connect</title>
+</head>
+<body>
+      <div class="container">
+          <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+              <div class="card card-signin my-5">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Sign Up</h5>
+                  <form class="form-signin" action="{{ url_for('signup_client') }}" method="post">
+                    <div class="form-label-group">
+                      <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+                      <label for="inputEmail">Email address</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                      <label for="inputPassword">Password</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="text" id="facebook_link" name="facebook_link" class="form-control" placeholder="Facebook Account Link" autofocus>
+                      <label for="facebook_link">Facebook</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="text" id="instagram_link" name="instagram_link" class="form-control" placeholder="Instagram Account Link" autofocus>
+                      <label for="instagram_link">Instagram</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="text" id="twitter_link" name="twitter_link" class="form-control" placeholder="Twitter Account Link" autofocus>
+                      <label for="twitter_link">Twitter</label>
+                    </div>
+
+                    <div class="form-label-group">
+                      <input type="text" id="snapchat_link" name="snapchat_link" class="form-control" placeholder="Snapchat Account Link" autofocus>
+                      <label for="snapchat_link">Snapchat</label>
+                    </div>
+
+                    <hr class="my-4">
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <script src={{url_for('static', filename='js/jquery-3.2.1.slim.min.js')}}></script>
+      <script src={{url_for('static', filename='js/popper.min.js')}}></script>
+      <script src={{url_for('static', filename='js/bootstrap.min.js')}}></script>
+</body>
+</html>

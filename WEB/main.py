@@ -11,6 +11,12 @@ app = Flask(__name__)
 def main():
     return render_template("index.html")
 
+@app.route("/signup")
+@app.route("/signup/")
+def signUp():
+    return render_template("signup.html")
+
+
 @app.route("/login")
 @app.route("/login/")
 def login():
@@ -18,8 +24,6 @@ def login():
     return render_template("login.html")
 
 @app.route("/check", methods=["POST"])
-# @app.route("/check/", methods=["POST"])
-# @app.route("/check/")
 def check_login_creds():
     # checks login email and password to allow login
     if request.method == "POST":
