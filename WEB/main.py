@@ -45,6 +45,7 @@ def check_login_creds():
 @app.route("/profile")
 def get_user_profile():
     # get fname
+    x = "Bob"
     # get lname
     return render_template("profile.html", fname=x )
 
