@@ -21,7 +21,7 @@ def check_login_creds():
     if request.method == "POST":
         response = request.form
         print(response)
-    return "hi"
+    return render_template("profile.html")
 
 @app.route("/profile")
 def get_user_profile():
