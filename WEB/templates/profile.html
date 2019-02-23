@@ -18,12 +18,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">FirstName LastName</h3>
+              <h3 class="login-heading mb-4">{{ fname }} {{ lname }}</h3>
 
               <!-- Instagram -->
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <img src={{url_for('static', filename='assets/instagram_logo.png')}} width=35px height=35px>
+                  <br/>
                   <h6 class="card-subtitle mb-2 text-muted">Instagram</h6>
                 </div>
               </div>
@@ -32,6 +33,7 @@
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <img src={{url_for('static', filename='assets/facebook_logo.png')}} width=35px height=35px>
+                  <br/>
                   <h6 class="card-subtitle mb-2 text-muted">Facebook</h6>
                 </div>
               </div>
@@ -40,6 +42,7 @@
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <img src={{url_for('static', filename='assets/snapchat_logo.png')}} width=35px height=35px>
+                  <br/>
                   <h6 class="card-subtitle mb-2 text-muted">Snapchat</h6>
                 </div>
               </div>
