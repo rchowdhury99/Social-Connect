@@ -1,6 +1,6 @@
-import os
+# this file does all the database related functions
+
 import sqlite3
-from datetime import datetime
 
 class Database(object):
     def login_info(self, db_name, db_table, email):
@@ -89,8 +89,12 @@ class Database(object):
     def update_user_profile(self, db_name, db_table, email, cols, vals):
         '''
         updates column values given an email and values
+        deletes the original row and writes a new one with updated values
         '''
         connect = sqlite3.connect("db.db")
+        # removing the already saved row
+        connect.execute("DELETE FROM %s WHERE Email == '%s'" % (db_table, email))
+
         command = "UPDATE %s SET " % (db_table)
         for i in range(len(cols)):
             if i != (len(cols)-1):
