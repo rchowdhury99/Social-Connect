@@ -16,9 +16,9 @@ You can generate qrcode images with links to your social media profiles
 ![Social Connect Profile Page - Screenshot](https://github.com/M-Faheem-Khan/Social-Connect/blob/master/WEB/static/assets/screenshots/profile.PNG)
 
 ## TEAM
+- Reizwan Chowdhury https://github.com/rchowdhury99
 - Arnold Wang https://github.com/ArnoldxWang
 - Muhammad F. Khan https://github.com/M-Faheem-Khan
-- Reizwan Chowdhury https://github.com/rchowdhury99
 
 ## Made using 
 - Bootstrap -> Front-End
