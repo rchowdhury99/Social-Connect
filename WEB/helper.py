@@ -73,7 +73,7 @@ class Database(object):
         return 0
 
 
-    def get_user_info(sefl, db_name, db_table, email):
+    def get_user_info(self, db_name, db_table, email):
         '''
         returns all the stored information about the user in the db as a list
         '''
@@ -85,3 +85,20 @@ class Database(object):
                 user_info.append(item)
 
         return user_info
+
+    def update_user_profile(self, db_name, db_table, email, cols, vals):
+        '''
+        updates column values given an email and values
+        '''
+        connect = sqlite3.connect("db.db")
+        command = "UPDATE %s SET " % (db_table)
+        for i in range(len(cols)):
+            if i != (len(cols)-1):
+                command += "%s = '%s', " % (cols[i], vals[i])
+            else:
+                command += "%s = '%s' " % (cols[i], vals[i])
+
+        command += "WHERE Email == '%s';" % (email)
+        print(command)
+        cursor = connect.execute(command)
+        return 0

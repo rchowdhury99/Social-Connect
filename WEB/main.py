@@ -67,5 +67,22 @@ def get_user_data(email):
     profile = Database().get_user_info("db.db", "CLIENTS", email)
     return render_template("edit_profile.html", email=email, fname=profile[0], lname=profile[1], password=profile[2], fb_link=profile[3], insta_link=profile[4], twitter_link=profile[5], snap_link=profile[6])
 
+@app.route("/update_info", methods=["POST"])
+def update_user_info():
+    if request.method == "POST":
+        response = request.form
+        cols = []
+        vals = []
+        # getting the email and password
+        for i in response:
+            vals.append(str(response[i]))
+            cols.append(str(i))
+
+        data = dict(zip(cols, vals))
+
+        Database().update_user_profile("db.db", "CLIENTS", data["email"], cols, vals)
+        user_name = Database().get_user_name("db.db", "CLIENTS", data["email"])
+        return render_template("profile.html", fname=user_name[0], lname=user_name[1], email=data["email"])
+
 if __name__ == "__main__":
     app.run(debug=True)

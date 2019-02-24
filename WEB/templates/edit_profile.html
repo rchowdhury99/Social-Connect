@@ -15,7 +15,7 @@
               <div class="card card-signin my-5">
                 <div class="card-body">
                   <h5 class="card-title text-center">Edit Profile</h5>
-                  <form class="form-signin" action="{{ url_for('signup_client') }}" method="post">
+                  <form class="form-signin" action="{{ url_for('update_user_info') }}" method="post">
                     <div class="form-label-group">
                       <input type="email" id="inputEmail" name="email" class="form-control" value={{email}} placeholder="Email address" required autofocus>
                       <label for="inputEmail">Email address</label>
