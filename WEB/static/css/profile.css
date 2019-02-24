@@ -9,8 +9,12 @@
 }
 
 .bg-image {
-  background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
-  background-size: cover;
+  background: #007bff;
+  background: linear-gradient(to right, #d600e6, #33AEFF);
+  background-image: url("../assets/social_connect_logo.png");
+  background-size: 300px 120px;
+  background-repeat: no-repeat;
+ /*background-size: cover;*/
   background-position: center;
 }
 

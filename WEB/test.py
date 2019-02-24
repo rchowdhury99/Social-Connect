@@ -1,23 +1,13 @@
 import sqlite3
 
+db_name = "db.db"
 db_table = "CLIENTS"
 email = "john.doe@example.com"
-connect = sqlite3.connect("db.db")
+connect = sqlite3.connect(db_name)
+cursor = connect.execute("SELECT * FROM %s WHERE Email == '%s'" % (db_table, email))
+user_info = []
+for i in cursor:
+    for item in i:
+        user_info.append(item)
 
-data = {'email': 'faheem5948@gmail.com', 'password': 'sdfghjk', 'facebook_link': 'somelink.com/user-name', 'instagram_link': 'somelink.com/user-name', 'twitter_link': 'somelink.com/user-name', 'snapchat_link': 'somelink.com/user-name'}
-command = "INSERT INTO %s (" % (db_table)
-for i in range(len(data)):
-    if i != len(data)-1:
-        print(i)
-        print(data[i])
-        command += data[i] + ", "
-    else:
-        command += data[i] + ") VALUES ( "
-
-for i in range(len(data)):
-    if i != len(data)-1:
-        command += "'" + data[i][i] + "', "
-    else:
-        command +=  "'" + data[i][i] + "');"
-
-print(command)
+print(user_info)

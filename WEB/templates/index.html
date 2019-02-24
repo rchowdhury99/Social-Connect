@@ -10,12 +10,15 @@
 </head>
 <body>
     <div class="container">
-      <h1 class="text-center">Login</h1>
         <div class="row">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5">
               <div class="card-body">
-                <h5 class="card-title text-center">Sign In</h5>
+                <!-- <h5 class="card-title text-center">Sign In</h5> -->
+                  <center>
+                      <img class = "logo" src={{url_for('static', filename = 'assets/social_connect_logo.png')}}/>
+                  </center>
+                  <hr class="my-4">
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="http_redirect('http://localhost:5000/login/')" type="submit">Login</button>
                   <hr class="my-4">
                   <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick="http_redirect('http://localhost:5000/signup/')" type="submit">Sign Up</button>

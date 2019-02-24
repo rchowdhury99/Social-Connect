@@ -18,7 +18,7 @@ class Database(object):
 
         return password
 
-    def get_user_info(self, db_name, db_table, email):
+    def get_user_name(self, db_name, db_table, email):
         '''Gets the First Name, Last Name'''
         connect = sqlite3.connect(db_name)
         cursor = connect.execute("SELECT Email, FirstName, LastName FROM %s WHERE Email == '%s' " % (db_table, email))
@@ -63,10 +63,25 @@ class Database(object):
             else:
                 vals += "'%s'" % values[i]
         vals = vals[:-2]
-        print(vals)
+
         sql_command = "INSERT INTO %s (%s) VALUES (%s)" % (db_table, cols, vals)
         print(sql_command)
+        
         cursor.execute(sql_command)
         connection.commit()
         connection.close()
-        return
+        return 0
+
+
+    def get_user_info(sefl, db_name, db_table, email):
+        '''
+        returns all the stored information about the user in the db as a list
+        '''
+        connect = sqlite3.connect(db_name)
+        cursor = connect.execute("SELECT * FROM %s WHERE Email == '%s'" % (db_table, email))
+        user_info = []
+        for i in cursor:
+            for item in i:
+                user_info.append(item)
+
+        return user_info

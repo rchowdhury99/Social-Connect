@@ -12,60 +12,48 @@
 
   <div class="container-fluid">
   <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="d-none d-md-flex col-md-3 col-lg-5 bg-image"></div>
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">{{ fname }} {{ lname }}</h3>
+              <h3 class="login-heading mb-4 text-center">{{ fname }} {{ lname }} <button class="btn btn-light" onclick="http_redirect('http://localhost:5000/edit-profile/{{ email }}')">Edit</button></h3>
+              <h5 class="login-heading mb-4 text-center">{{ email }}</h5>
 
-            <div class="row">
-              <div class="col-sm-6">
-              <!-- Instagram -->
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src={{url_for("static", filename="assets/chair_lady.png")}} alt="Card image cap">
+
+            <div class="card-deck">
+              <div class="card" style="width:500px">
+                <img class="card-img-top" src="static/assets/1.png" alt="Card image">
                 <div class="card-body">
-                  <p class="card-text text-center">Instagram</p>
+                  <h4 class="card-text text-center">Twitter</h4>
                 </div>
               </div>
-
-              </div>
-              <br/>
-
-            <div class="col-sm-6">
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src={{url_for("static", filename="assets/chair_lady2.png")}} alt="Card image cap">
+              <div class="card" style="width:500px">
+                <img class="card-img-top" src="static/assets/2.png" alt="Card image">
                 <div class="card-body">
-                  <p class="card-text text-center">Facebook</p>
-                </div>
-              </div>
-
-            </div>
-            </div>
-
-            <div class="row">
-            <div class="col-sm-6">
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src={{url_for("static", filename="assets/lady_standing.png")}} alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text text-center">Twitter</p>
+                  <h4 class="card-text text-center">Instagram</h4>
                 </div>
               </div>
             </div>
 
-            <br/>
+            <br class="my-4">
 
-            <div class="col-sm-6">
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src={{url_for("static", filename="assets/man_walking.png")}} alt="Card image cap">
+
+            <div class="card-deck">
+              <div class="card" style="width:500px">
+                <img class="card-img-top" src="static/assets/3.png" alt="Card image">
                 <div class="card-body">
-                  <p class="card-text text-center">Snapchat</p>
+                  <h4 class="card-text text-center">Snapchat</h4>
+                </div>
+              </div>
+              <div class="card" style="width:500px">
+                <img class="card-img-top" src="static/assets/4.png" alt="Card image">
+                <div class="card-body">
+                  <h4 class="card-text text-center">Facebook</h4>
                 </div>
               </div>
             </div>
-          </div>
-
             </div>
           </div>
         </div>
@@ -73,6 +61,13 @@
     </div>
   </div>
   </div>
+
+  <script>
+    function http_redirect(url) {
+      // redirects the page to passed url
+      window.location.href = url;
+    }
+  </script>
 
   <!-- Bootstrap essentials -->
   <script src={{url_for('static', filename='js/jquery-3.2.1.slim.min.js')}}></script>
