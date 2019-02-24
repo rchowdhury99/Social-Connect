@@ -18,10 +18,10 @@ You can generate qrcode images with links to your social media profiles
 ## TEAM
 - Arnold Wang https://github.com/ArnoldxWang
 - Muhammad F. Khan https://github.com/M-Faheem-Khan
-- Rizwan C. https://github.com/rchowdhury99
+- Reizwan C. https://github.com/rchowdhury99
 
 ## Made using 
 - Bootstrap -> Front-End
-- FLask -> Back-end
+- Flask -> Back-end
 - Sqlite3 -> Database
 - Qrcodejs -> QR-Code Generation
