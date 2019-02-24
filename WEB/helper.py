@@ -102,3 +102,4 @@ class Database(object):
         print(command)
         cursor = connect.execute(command)
         return 0
+

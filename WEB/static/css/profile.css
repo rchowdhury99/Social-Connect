@@ -93,3 +93,9 @@
 .card {
   background-color: rgba(255, 255, 128);
 }
+
+canvas {
+  background-color: blue; 
+  width: 100%;
+  height: auto;
+}

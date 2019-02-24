@@ -110,6 +110,11 @@ body {
 }
 
 .logo {
-  height: 120px;
+  height: 115px;
   width: 300px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
 }
