@@ -18,7 +18,7 @@ You can generate qrcode images with links to your social media profiles
 ## TEAM
 - Arnold Wang https://github.com/ArnoldxWang
 - Muhammad F. Khan https://github.com/M-Faheem-Khan
-- Reizwan C. https://github.com/rchowdhury99
+- Reizwan Chowdhury https://github.com/rchowdhury99
 
 ## Made using 
 - Bootstrap -> Front-End
