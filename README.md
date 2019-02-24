@@ -1,7 +1,7 @@
 ![Social Connect Logo](https://github.com/M-Faheem-Khan/Social-Connect/blob/master/WEB/static/assets/social_connect_logo.png)
 
 Share you social media accounts from one place<br/>
-You can generate qrcode images wuth links to your social media profiles
+You can generate qrcode images with links to your social media profiles
 
 # Home
 ![Social Connect Home Page - Screenshot](https://github.com/M-Faheem-Khan/Social-Connect/blob/master/WEB/static/assets/screenshots/home.PNG)
