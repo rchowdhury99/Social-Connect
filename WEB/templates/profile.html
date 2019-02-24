@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" href={{url_for('static', filename='css/profile.css')}}>
   <link rel="stylesheet" href={{url_for('static', filename='css/bootstrap.min.css')}}>
@@ -17,62 +18,63 @@
   <script type="text/javascript" src={{url_for('static', filename="js/jquery.qrcode.min.js")}}></script>
 
 </head>
+
 <body>
 
   <div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-3 col-lg-5 bg-image"></div>
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4 text-center">{{ fname }} {{ lname }} <button class="btn btn-light" onclick="http_redirect('http://localhost:5000/edit-profile/{{ email }}')">Edit</button></h3>
-              <h5 class="login-heading mb-4 text-center">{{ email }}</h5>
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-3 col-lg-5 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="login-heading mb-4 text-center">{{ fname }} {{ lname }} <button class="btn btn-light" onclick="http_redirect('http://localhost:5000/edit-profile/{{ email }}')">Edit</button></h3>
+                <h5 class="login-heading mb-4 text-center">{{ email }}</h5>
 
 
-            <div class="card-deck">
-              <div class="card">
-                <!-- <img class="card-img-top" src="static/assets/1.png" alt="Card image"> -->
-                <div id="qrcode-twitter" class="card-img-top" value="{{twitter_link}}"></div>
-                <div class="card-body">
-                  <h4 class="card-text text-center">Twitter</h4>
+                <div class="card-deck">
+                  <div class="card">
+                    <!-- <img class="card-img-top" src="static/assets/1.png" alt="Card image"> -->
+                    <div id="qrcode-twitter" class="card-img-top" value="{{twitter_link}}"></div>
+                    <div class="card-body">
+                      <h4 class="card-text text-center">Twitter</h4>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <!-- <img class="card-img-top" src="static/assets/2.png" alt="Card image"> -->
+                    <div id="qrcode-insta" class="card-img-top" value="{{insta_link}}"></div>
+                    <div class="card-body">
+                      <h4 class="card-text text-center">Instagram</h4>
+                    </div>
+                  </div>
+                </div>
+
+                <br class="my-4">
+
+                <div class="card-deck">
+                  <div class="card" style="width:500px">
+                    <!-- <img class="card-img-top" src="static/assets/3.png" alt="Card image"> -->
+                    <div id="qrcode-snap" class="card-img-top" value="{{snap_link}}"></div>
+                    <div class="card-body">
+                      <h4 class="card-text text-center">Snapchat</h4>
+                    </div>
+                  </div>
+                  <div class="card" style="width:500px">
+                    <!-- <img class="card-img-top" src="static/assets/4.png" alt="Card image"> -->
+                    <div id="qrcode-fb" class="card-img-top" value="{{fb_link}}"></div>
+                    <div class="card-body">
+                      <h4 class="card-text text-center">Facebook</h4>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div class="card" >
-                <!-- <img class="card-img-top" src="static/assets/2.png" alt="Card image"> -->
-                <div id="qrcode-insta" class="card-img-top" value="{{insta_link}}"></div>
-                <div class="card-body">
-                  <h4 class="card-text text-center">Instagram</h4>
-                </div>
-              </div>
-            </div>
-
-            <br class="my-4">
-
-            <div class="card-deck">
-              <div class="card" style="width:500px">
-                <!-- <img class="card-img-top" src="static/assets/3.png" alt="Card image"> -->
-                <div id="qrcode-snap" class="card-img-top" value="{{snap_link}}"></div>
-                <div class="card-body">
-                  <h4 class="card-text text-center">Snapchat</h4>
-                </div>
-              </div>
-              <div class="card" style="width:500px">
-                <!-- <img class="card-img-top" src="static/assets/4.png" alt="Card image"> -->
-                <div id="qrcode-fb" class="card-img-top" value="{{fb_link}}"></div>
-                <div class="card-body">
-                  <h4 class="card-text text-center">Facebook</h4>
-                </div>
-              </div>
-            </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <script>
@@ -84,24 +86,24 @@
     // jQuery('#qrcode').qrcode({
     //   render  : "table",
     //   text  : "http://jetienne.com"
-    // }); 
+    // });
 
-      jQuery('#qrcode-twitter').qrcode({
-        text  : "{{twitter_link}}"
-      });
+    jQuery('#qrcode-twitter').qrcode({
+      text: "{{twitter_link}}"
+    });
 
-      jQuery('#qrcode-insta').qrcode({
-        text  : "{{insta_link}}"
-      });
+    jQuery('#qrcode-insta').qrcode({
+      text: "{{insta_link}}"
+    });
 
-      jQuery('#qrcode-snap').qrcode({
-        text  : "{{snap_link}}"
-      });
+    jQuery('#qrcode-snap').qrcode({
+      text: "{{snap_link}}"
+    });
 
-      jQuery('#qrcode-fb').qrcode({
-        text  : "{{fb_link}}"
-      });
-
+    jQuery('#qrcode-fb').qrcode({
+      text: "{{fb_link}}"
+    });
   </script>
 </body>
+
 </html>

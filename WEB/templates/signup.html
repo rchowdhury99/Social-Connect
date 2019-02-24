@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-      <link rel="stylesheet" href={{url_for('static', filename='css/styles.css')}}>
-      <link rel="stylesheet" href={{url_for('static', filename='css/bootstrap.min.css')}}>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Social Connect</title>
+  <link rel="stylesheet" href={{url_for('static', filename='css/styles.css')}}>
+  <link rel="stylesheet" href={{url_for('static', filename='css/bootstrap.min.css')}}>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Social Connect</title>
 </head>
+
 <body>
-      <div class="container">
-          <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div class="card card-signin my-5">
-                <div class="card-body">
-                  <h5 class="card-title text-center">Sign Up</h5>
-                  <form class="form-signin" action="{{ url_for('signup_client') }}" method="post">
-                    <div class="form-label-group">
-                      <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-                      <label for="inputEmail">Email address</label>
-                    </div>
-
-                    <div class="form-label-group">
-                      <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="First name" required>
-                      <label for="FirstName">First name</label>
-                    </div>
-
-                    <div class="form-label-group">
-                      <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last name" required>
-                      <label for="LastName">Last name</label>
-                    </div>
-
-                    <div class="form-label-group">
-                      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-                      <label for="inputPassword">Password</label>
-                    </div>
-
-                    <div class="form-label-group">
-                      <input type="text" id="FacebookID" name="FacebookID" class="form-control" placeholder="Facebook Account Link" autofocus>
-                      <label for="FacebookID">Facebook</label>
-                    </div>
-
-                    <div class="form-label-group">
-                      <input type="text" id="InstagramID" name="InstagramID" class="form-control" placeholder="Instagram Account Link" autofocus>
-                      <label for="InstagramID">Instagram</label>
-                    </div>
-
-                    <div class="form-label-group">
-                      <input type="text" id="TwitterId" name="TwitterId" class="form-control" placeholder="Twitter Account Link" autofocus>
-                      <label for="TwitterId">Twitter</label>
-                    </div>
-
-                    <div class="form-label-group">
-                      <input type="text" id="SnapchatID" name="SnapchatID" class="form-control" placeholder="Snapchat Account Link" autofocus>
-                      <label for="SnapchatID">Snapchat</label>
-                    </div>
-
-                    <hr class="my-4">
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
-                  </form>
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign Up</h5>
+            <form class="form-signin" action="{{ url_for('signup_client') }}" method="post">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail">Email address</label>
               </div>
-            </div>
+
+              <div class="form-label-group">
+                <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="First name" required>
+                <label for="FirstName">First name</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last name" required>
+                <label for="LastName">Last name</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="FacebookID" name="FacebookID" class="form-control" placeholder="Facebook Account Link" autofocus>
+                <label for="FacebookID">Facebook</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="InstagramID" name="InstagramID" class="form-control" placeholder="Instagram Account Link" autofocus>
+                <label for="InstagramID">Instagram</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="TwitterId" name="TwitterId" class="form-control" placeholder="Twitter Account Link" autofocus>
+                <label for="TwitterId">Twitter</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="text" id="SnapchatID" name="SnapchatID" class="form-control" placeholder="Snapchat Account Link" autofocus>
+                <label for="SnapchatID">Snapchat</label>
+              </div>
+
+              <hr class="my-4">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
+            </form>
           </div>
         </div>
-      <script src={{url_for('static', filename='js/jquery-3.2.1.slim.min.js')}}></script>
-      <script src={{url_for('static', filename='js/popper.min.js')}}></script>
-      <script src={{url_for('static', filename='js/bootstrap.min.js')}}></script>
+      </div>
+    </div>
+  </div>
+  <script src={{url_for('static', filename='js/jquery-3.2.1.slim.min.js')}}></script>
+  <script src={{url_for('static', filename='js/popper.min.js')}}></script>
+  <script src={{url_for('static', filename='js/bootstrap.min.js')}}></script>
 </body>
+
 </html>
